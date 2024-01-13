@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro trabajador</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">Control Empleados</a>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/empresa}">
+          Control Trabajadores
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+      <h1 class="text-center">Registro de trabajador</h1>
+      <div class="card-body">
+        <form th:action="@{/nuevo}" th:object="${nuevotrabajador}" method="post">
+          <input type="hidden" th:field="*{id}">
+          <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" name="name" th:field="*{name}" class="form-control" placeholder="Digite su nombre" required>
+          </div>
+          <br>
+          <div class="form-group">
+            <label>Apellido</label>
+            <input type="text" name="apellido" th:field="*{apellido}" class="form-control" placeholder="Digite su apellido" required>
+          </div>
+          <br>
+          <div class="form-group">
+            <label>Correo Electrónico</label>
+            <input type="email" name="email" th:field="*{email}" class="form-control" placeholder="Digite su correo electrónico" required>
+          </div>
+          <br>
+          <button type="submit" class="btn btn-primary btn-block">Registrar Trabajador</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha384-bT5KzTflZ03yHxIepcahqJyP4LGJYb3f3t7zvWRS6dsqzq4KtZgfkGH3LlO8i1T" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-GLhlTQ8iKu16H/J9Q97BznE+huT8KJrxF6b8vFhMz6VrP8egD6NA6ZbvlznZENo1" crossorigin="anonymous"></script>
+
+</body>
+</html>
